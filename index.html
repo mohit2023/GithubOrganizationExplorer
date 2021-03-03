@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>GithubOrgsExplorer</title>
+</head>
+<body>
+  
+  <h3 class="w-100 text-center mb-4 p-3">
+    Github Organizations Explorer
+  </h3>
+
+  <main class="col-md-8 offset-md-2 pb-5 px-2">
+
+    <form id="repo-finder-form" class="row mb-5 px-3">
+      <div class="col-sm-4 col-6">
+        <label for="organization-name" class="text-muted text-small">Organization</label>
+        <input type="text" class="form-control" id="organization-name" value="google">
+      </div>
+      <div class="col-sm-3 col-6">
+        <label for="repo-count" class="text-muted text-small">N(Top repos)</label>
+        <input type="number" min="0" class="form-control" id="repo-count" value="20">
+      </div>
+      <div class="col-sm-3 col-6">
+        <label for="committee-count" class="text-muted text-small">M(Top committees)</label>
+        <input type="number" min="0" class="form-control" id="committee-count" value="5">
+      </div>
+      <div class="col-sm-2 col-6 d-flex align-items-center justify-content-center">
+        <button type="submit" class="btn btn-primary">Fetch</button>
+      </div>
+    </form>
+
+    <div id="loader" class="loader">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+
+    <div id="popular-repo-lists" class="scrollable mx-5 mb-4"></div>
+
+  </main>
+
+  <div id="popup" class="overlay">
+    <div class="popup-container">
+      <button id="close-popup" class="btn btn-close float-end close-popup"></button>
+      <div id="popup-repository" class="mb-2 d-inline fw-bold fs-4"></div>
+      <ul id="committee-list" class="list-group px-3 m-3"></ul>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>
